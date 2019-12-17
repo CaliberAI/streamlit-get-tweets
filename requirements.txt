@@ -1,0 +1,3 @@
+streamlit==0.49.0
+tweepy==3.8.0
+emoji-data-python==1.3.0
