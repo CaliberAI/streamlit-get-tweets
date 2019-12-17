@@ -3,7 +3,6 @@ import tweepy
 import csv
 import re
 import emoji_data_python
-from aylien_news_api.rest import ApiException
 
 default_accounts = ['RubinReport', 
   'DouglasKMurray', 
@@ -65,7 +64,7 @@ def get_tweets(account):
 
 
 st.title('Get Tweets')
-st.markdown('A [simple demonstration](https://github.com/CaliberAI/streamlit-get-stories-aylien) of using [Streamlit](https://streamlit.io/) with [Tweepy](https://www.tweepy.org/) to get Tweets from Twitter Accounts.')
+st.markdown('A [simple demonstration](https://github.com/CaliberAI/streamlit-get-tweets) of using [Streamlit](https://streamlit.io/) with [Tweepy](https://www.tweepy.org/) to get Tweets from Twitter Accounts.')
 api_key = st.text_input('Twitter API Key', '')
 api_secret_key = st.text_input('Twitter API Secret Key', '')
 access_token = st.text_input('Twitter Access Token', '')
