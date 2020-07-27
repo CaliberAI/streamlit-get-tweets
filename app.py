@@ -86,12 +86,14 @@ if go:
                     text = tweet.retweeted_status.full_text
                 else:
                     text = tweet.full_text
-                text = re.sub('http://\S+|https://\S+', ' ', text)
-                text = re.sub(emoji_data_python.get_emoji_regex(), ' ', text)
-                text = re.sub('\n', ' ', text)
-                text = re.sub('&amp;', '&', text)
-                text = re.sub('  ', ' ', text)
                 if tweet.lang == 'en':
+                    text = re.sub('http://\S+|https://\S+', ' ', text)
+                    text = re.sub(emoji_data_python.get_emoji_regex(), ' ', text)
+                    text = re.sub('\n', ' ', text)
+                    text = re.sub('&amp;', '&', text)
+                    text = re.sub('@', '', text)
+                    text = re.sub('  ', ' ', text)
+                
                     tweets += [[tweet.user.screen_name, text, tweet.id_str]]
         st.subheader('Tweets')
         st.dataframe(tweets)
